@@ -9,7 +9,7 @@
   <arg name="debug" default="false"/>
   <arg name="x_pos" default="-18.0"/>
   <arg name="y_pos" default="2.0"/>
-  <arg name="z_pos" default="0.1"/>
+  <arg name="z_pos" default="0.0"/>
   <env name="GAZEBO_MODEL_PATH" value="$(find rl_racefield)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
   <!-- We resume the logic in empty_world.launch -->
@@ -39,5 +39,9 @@
 <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />   -->
 <!-- RVIZ  -->
 <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rl_fra2mo_description)/conf/fra2mo_conf_map.rviz" required="true" />
+
+<!--Static tf publisher for goal1-->
+<!-- <node pkg="tf" type="static_transform_publisher" name="goal_1_pub" args="-3 5 0 0 0 0 1 map goal1 100" /> -->
+
 
 </launch>
